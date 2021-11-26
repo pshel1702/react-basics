@@ -1,17 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "bootstrap/dist/css/bootstrap.min.css"; //create react app uses webpack to handle css, will inject css into our application
+import React from "react";
+import { render } from 'react-dom';
+import { BrowserRouter as Router } from "react-router-dom";
+//reference to a function inside the element we're importing. creates a const called render that references react-dom's render function. 
+//which renders our app.  
+import App from "./components/App";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+//render accepts two args
+//render: set up entry point
+render(
+  <Router>
+    <App/>
+  </Router>, 
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
